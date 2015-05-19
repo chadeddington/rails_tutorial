@@ -1,3 +1,4 @@
+<!-- Show the Article -->
 <p>
   <strong>Title:</strong>
   <%= @article.title %>
@@ -7,15 +8,14 @@
   <strong>Text:</strong>
   <%= @article.text %>
 </p>
+<!-- Show the Comments -->
+<h2>Comments</h2>
+<%= render @article.comments %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+<!-- Add a comment -->
+<h2>Add a comment:</h2>
+<!-- Rails knows that form is the partial view _form -->
+<%= render 'comments/form' %>
 
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
-
+<%= link_to 'Edit', edit_article_path(@article) %> |
 <%= link_to 'Back', articles_path %>
